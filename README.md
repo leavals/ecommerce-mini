@@ -1,10 +1,3 @@
-Perfecto 🙌 entonces le damos un tono más **profesional/portafolio**, no solo educativo. Te dejo las dos versiones listas:
-
----
-
-## 🇬🇧 `README.md` (English – Portfolio style)
-
-````markdown
 # 🛒 Ecommerce Mini (Portfolio Demo)
 
 A complete **fullstack ecommerce demo** built as part of my portfolio to showcase my skills in backend and frontend development.  
