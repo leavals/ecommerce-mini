@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  orders    Order[]
+}
+
+model Product {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String?
+  imageUrl    String?
+  priceCents  Int
+  stock       Int         @default(0)
+  active      Boolean     @default(true)
+  createdAt   DateTime    @default(now())
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  userId     Int?
+  user       User?       @relation(fields: [userId], references: [id])
+  status     String      @default("PENDING") // "PENDING" | "PAID" | "FAILED"
+  totalCents Int
+  paypalId   String?
+  createdAt  DateTime    @default(now())
+  items      OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  unitCents Int
+}

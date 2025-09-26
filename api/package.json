@@ -1,0 +1,35 @@
+{
+  "name": "ecommerce-mini-api",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "prisma:studio": "prisma studio",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:seed": "prisma db seed"
+  },
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@prisma/client": "^5.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^20.11.30",
+    "prisma": "^5.19.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}

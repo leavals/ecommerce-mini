@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fondo con gradiente sutil */
+body {
+  @apply bg-gradient-to-b from-brand-50/40 via-white to-white text-gray-900 antialiased;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+/* Layout helper */
+.container-pro { @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8; }
+
+/* Tarjetas y botones */
+.card { @apply rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-soft; }
+.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold transition; }
+.btn-primary { @apply text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600; }
+.btn-outline { @apply border border-gray-300 bg-white text-gray-900 hover:bg-brand-50; }
+.btn-danger { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-red-600 text-white hover:bg-red-700; }
+
+
+/* Badges */
+.badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+.badge-brand { @apply border border-brand-200 bg-brand-50 text-brand-700; }
+.badge-paid { @apply border border-green-200 bg-green-50 text-green-700; }
+.badge-pending { @apply border border-amber-200 bg-amber-50 text-amber-700; }
